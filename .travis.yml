@@ -1,0 +1,27 @@
+language: node
+
+cache:
+  yarn: true
+
+install:
+  - cd ..
+  - git clone https://github.com/n7consulting/jeyser-site.git
+  - cd jeyser-site
+  - yarn install
+  - ln -s $TRAVIS_BUILD_DIR src/pages/docs
+
+script:
+  - cd $TRAVIS_BUILD_DIR/../jeyser-site
+  - bin/generate-nav
+  - yarn gatsby build
+
+# deploy to jeyser-site repository
+deploy:
+  provider: pages
+  skip_cleanup: true
+  repo: n7consulting/jeyser-site
+  github_token: $GITHUB_TOKEN
+  local_dir: $TRAVIS_BUILD_DIR/../jeyser-site/public
+  fqdn: jeyser-crm.n7consulting.fr
+  on:
+    branch: master 
