@@ -1,116 +1,109 @@
+
 # Environment
 
-This part brings you from a standard computer to an environment 
-ready for Jeyser installation. You will install the required software to connect a server, book a server, point a subdomain to its IP address.
+This part brings you from a standard computer to an environment ready for Jeyser installation.
+In this part you will install the required software to connect a server, book a server and point a subdomain to its IP address.
 
-If DNS and SSH are familiar to you, you can skip to the next chapter.
-
-
-== Serveur Web
-
-====
-Jeyser nécessite la mise en place d'un serveur web.
-Nous allons dans un premier temps vous guider dans l'achat et la préparation de celui-ci.
-Un tel serveur peut être celui utilisé pour le site vitrine de votre J.E.
-====
+If DNS and SSH are already familiar to you, you can probably skip to the next chapter.
 
 
 
-=== Choix d'un hébergeur
+## Web server
 
-Il existe de nombreux hébergeurs avec différentes offres de serveurs et de qualité de service.
+Jeyser requires a web server to run. To begin with we will guide you in your server choice and its preparation process.
+<br/><br/>
 
-La configuration minimale de Jeyser requiert un serveur privé virtuel (VPS) avec 1 vCore et 1Go de RAM.
+### Hosting provider
 
-Pour faciliter vos démarches, nous avons sélectionné deux prestataires dont les caractéristiques techniques du serveur sont suffisantes, à prix très correct et avec lesquels nous avons déjà travaillé.
+A provider is a company providing servers and other web related products such as domain names. If you already have a website, you probably also have a provider.
+There are a lot of hosting provider, the main ones in France are 1and1, OVH, Online. They provide different offers with different service quality.
 
-* link:https://www.ovh.com/fr/vps/vps-ssd.xml[OVH]
-** 2,99€ HT / mois
-** 1 vCore
-** 2Go RAM
-** 10Go stockage SSD
-** 1 IPv4
+The minimal requirements for Jeyser is a Virtual PrivateServer (VPS) with 1 vCore and 1Go of RAM.
 
-* link:https://www.scaleway.com/pricing/[Scaleway]
-** 2,99€ HT /mois
-** 2 vCore x86-64
-** 2Go RAM
-** 50Go stockage SSD
-** 1 IPv4
+Here is a small list of provider which provides some decent hosting for Jeyser.
 
-Cette liste est à titre purement indicatif, nous n'avons aucune entente avec l'un de ces hébergeurs.
+* [OVH](https://www.ovh.com/fr/vps/vps-ssd.xml)
+    2,99€ / month | 1 vCore | 2Go RAM | 10Go SSD storage
 
 
+* [Scaleway](https://www.scaleway.com/pricing/)
+    2,99€ /month | 2 vCore | 2Go RAM | 50Go SSD storage
 
-=== Choix du système d'exploitation
 
-Au moment de la commande, préférez une localisation en France.
-Pour le choix du système d'exploitation nous vous recommandons Linux Ubuntu 16.04 64bits car le programme d'installation y a été vérifié.
+This list is just the providers used by N7 Consulting and M-Gate. We have no additional business ties with them.
+If you are just a beginner, we strongly advocates for OVH which provides an easier management (no need to handle a SSH Key).
 
-Au cours des étapes suivantes vous aurez surement à vous créer un compte chez ledit hébergeur puis à renseigner des informations bancaires.
+As for localization, the closer, the better, thus choose somewhere in France (or Germany if France is not available).
+
+As for Operating System, choose Ubuntu 16.04 because it is the only OS on which our installation process is regularly tested.
+
+During the server booking process you will have to create an account (if you don't already have one) and give some bank account information.
 
 
 
+### Domain name
 
-== Nom de domaine
+To get an automatic, free SSL certificate (https) you will have to provide a valid domain name for Jeyser. A domain name is a name on the internet. 
+It can be your own such as `n7consulting.fr`  or something provided by your school such as `bde.enseeiht.fr`.
+It does not matters, as long as you can point a name to the IP of your server.
 
-Si vous n'en avez pas encore un, un nom de domaine vous sera plus pratique pour accéder à votre site web ainsi qu'à Jeyser. En louant un nom de domaine auprès d'un registraire de nom de domaine, vous pouvez faire pointer celui ci vers votre l'adresse IP de votre serveur.
+Every hosting provider is also a registrar (a company which sells domain name). If you don't already have a domain name, buy it at the same provider as your hosting.
+If you already have one, great! If you don't have one (or can't have access to one through your school), you can buy one at the following registrar.
 
-Là encore nous vous donnons une liste non exhaustive de registraires :
-
-* link:https://www.1and1.fr/noms-de-domaine[1&1]
-** Domaine .fr gratuit la première année puis 9,99€/an
-** Domaine .com à 0,99€/an la première année, puis 9,99€/an
-
-* link:https://www.namecheap.com/domains/domain-name-search.aspx[Namecheap]
-** Domaine .fr à 7,62€/an
-** Domaine .com à 7,43€/an
-
-* link:https://fr.godaddy.com/domains/domain-name-search[GoDaddy]
-** Domaine .com à 1,19€ la première année, puis 19,36€/an
+* [OVH](https://www.ovh.com/fr/domaines/)
+   .fr at 6.99€/year | .com at 9.99€/year 
 
 
+* [1&1](https://www.1and1.fr/noms-de-domaine)
+   .fr at 9,99€/year | .com at 9,99€/an
 
 
-== Connexion au serveur
-
-Après paiement vous devriez recevoir un mot de passe pour vous connecter à votre serveur.
-
-Chez certains hébergeurs comme Scaleway vous pouvez avoir à enregistrer une clé dans votre espace client. Référez vous dans ce cas à l'annexe "Connexion par clés".
+> At N7 Consulting, our servers are rent at OVH and domain is registered at 1and1 and it works perfectly.
 
 
 
-=== Windows
+### Connect to your new server
 
-Le logiciel vous permettant de vous connecter à votre serveur s'appelle PuTTY.
+Once you paid your server, you should receive an email with your new server IP adress, a account name (usually root) and a password.
 
-link:https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html[Téléchargez PuTTY]
-
-Une fois installé, démarrez l'exécutable PuTTY. Vous arrivez dans l'espace de configuration de session.
-
-image::Putty_7.png[470,470,align=center]
-
-* Pour le champ "Host Name) entrez l'adresse IP de votre serveur (ou le nom de domaine si vous en avez acheté un), laissez le port 22 et la connection de type SSH.
-
-* Pour que toutes ces manipulations restent enregistrées dans Putty, vous pouvez donner un nom dans le champ "Saved Sessions" et cliquer sur "Save".
-
-* Cliquez en bas sur "Open".
-
-* La connexion s'établit alors avec votre serveur et vous devez saisir un identifiant. Par défaut il s'agit du super administrateur: root
-
-* Validez avec la touche entrée car ici tout se fait au clavier puis saisissez le mot de passe qui vous a été donné.
-
-====
-Félicitations, vous avez passé le plus compliqué, vous êtes sur votre serveur ! Dans le chapitre suivant nous allons vous accompagner dans l'installation de Jeyser !
-====
-
-If you are asked about SSH key, read [SSH key connection](ssh-key)
+Several providers, such as Scaleway, demand a SSH Key to connect your server.
+In that case, please refer to the [annexes "SSH Key connection"](annexes#ssh-key-connection).
 
 
 
+#### Windows
+
+To connect to a server you need a software (a SSH client) called Putty.
+
+[Download and install it using default options](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+
+Once installed, launch it. 
+
+<figure>
+ <img src="images/putty-7.png" alt="Putty welcome page" />
+</figure>
+
+* Fill *Hostname* with your server IP address (or the domaine name if it already point to your server IP)
 
 
+* Let the other values to their default unless you configured your server differently
 
+
+* (Optionnal) To save this configuration in Putty, you can it a name in the field *Saved Sessions* and click *save*.
+
+
+* At the bottom click *Open* to connect your server.
+
+
+* Then give the account name (specified in the booking confirmation email).
+
+
+* Validate by pressing *Return* because everything has to be done through keyboard. Fill your password, validate, and you are in! 
+
+**Well done. The hardest is now behind.**
+
+
+*Note:* If you are asked about SSH key, read [SSH key connection](annexes#ssh-key-connection)
 
 
 
@@ -118,8 +111,10 @@ If you are asked about SSH key, read [SSH key connection](ssh-key)
 
 Illustrated process of how to point a subdomain on an IP adress
 
- - [Pointing a subdomain to an IP address - 1and1]()
+ - [Pointing a subdomain to an IP address - 1and1](./)
  
- - [Pointing a subdomain to an IP address - OVH]()
+ 
+ - [Pointing a subdomain to an IP address - OVH](./)
+
 
  - Contributions are welcomed. Add your own guide.
