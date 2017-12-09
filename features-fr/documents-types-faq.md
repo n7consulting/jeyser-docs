@@ -14,7 +14,7 @@ Voici une liste des questions souvent posées à propos des documents types.
  Passez vos documents types sous word ou bien n'utilisez pas Jeyser.
   <br/><br/>
 
- #### Pensez vous ajouter le support du format XXX (notammment `.pptx`)dans les prochaines versions ?
+ #### Pensez vous ajouter le support du format XXX (notammment `.pptx`) dans les prochaines versions ?
  
  Probablement pas. Nous sommes ouvert aux contributions extérieures sur le sujet. Cependant, d'un point de vue 
  de la Core Team Jeyser, nous préférons imposer un format et garantir son bon fonctionnement plutôt 
@@ -32,6 +32,7 @@ Voici une liste des questions souvent posées à propos des documents types.
 
 
 ## Utilisation du publipostage
+
 
  #### Jeyser ne supporte que Word, comment faire pour les documents sur Excel comme les BV ou les factures ?
  
@@ -64,13 +65,13 @@ Voici une liste des questions souvent posées à propos des documents types.
 
  #### Lorsque j'exporte, certaines parties sont vides au lieu d'être remplies ?
  
- Vous utilisez probablement un attribut qui n'existe pas (`etude.jenexistepas`) ou alors la valeur à été laissée vide du coté de l'ERP
+ Vous utilisez probablement un attribut qui n'existe pas (`etude.jenexistepas`) ou alors la valeur à été laissée vide du coté de l'ERP.
  <br/><br/>
  
  #### Votre module ne marche pas dans le cas <insérez ici la situation de votre choix> ?
  
  Nous sommes déjà plusieurs juniors à utiliser le module d'export pour nos affaires quotidiennes. 
- L'erreur vient plus probablement de votre coté. N'hésitez pas à demander [de l'aide](https://jeyser-crm.n7consulting.fr/support).
+ L'erreur vient plus probablement de votre coté. N'hésitez pas à demander [de l'aide](./../../support).
  <br/><br/>
 
  #### Après export, mon document est corrompu ?
@@ -82,6 +83,7 @@ Voici une liste des questions souvent posées à propos des documents types.
  
  Il est également déconseillé de faire du copier-coller de texte entre document car cela à tendance à le casser.
 
+  <br/>**Pour les utilisateurs avancés**
  
  *For the record,* il existe une méthode pour débugger à la main les documents types, mais elle exige un peu de compétences
  techniques. En voici les grandes lignes:
