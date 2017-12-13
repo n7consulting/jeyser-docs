@@ -21,6 +21,7 @@
 8. [Documents types](features-fr/documents-types.md)
 9. [FAQ Documents types](features-fr/documents-types-faq.md)
 10. [Administration](features-fr/administration.md)
+11. [Règlement général sur la protection des données](features-fr/gdpr.md)
 
 ## User guides
 
