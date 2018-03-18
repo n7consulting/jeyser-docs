@@ -18,14 +18,19 @@ Depuis l'espace admin, vous pouvez importer et mettre à jour vos documents-type
 
 Pour plus de précisions, consultez la [page dédiée aux documents types](documents-types).
 
+### Postes et filières
+
+Organisez les postes et les filières disponible pour les membres depuis cette partie.
+
 ### Roles et utilisateurs
 
-Les administrateurs peuvent gérer les membres et leurs permissions sur Jeyser.
+Les administrateurs peuvent gérer les utilisateurs et leurs permissions sur Jeyser. Le système de permission sur Jeyser est basé sur des rôles (RBAC). Chaque rôle a des prérogatives propres et les utilisateurs ont les mêmes prérogatives que les rôles auxquels ils appartiennent.
 
 Les rôles disponibles sont les suivants : 
 
  - ROLE_SUPERADMIN : Role donné au premier utilisateur créé automatiquement à l'installation. Un SuperAdmin à accès à un panneau de gestion de la base de données permettant de modifier les données brutes. A réserver aux membres du Pole DSI expérimentés. Englobe tous les roles.
  - ROLE_ADMIN : Permet de gérer les documents types, les utilisateurs, de modifier les paramètres de Jeyser. Englobe les roles CA, SUIVEUR, ELEVE. N'a pas accès à la trésorerie.
+ - ROLE_RGPD : Permet d'accéder au module de gestion des données personnelles. Plus de détails sur le [RGPD](gdpr).
  - ROLE_CA : Permet de consulter les statistiques et les études confidentielles. Contrairement à ce que suggère le nom, nous vous conseillons de ne donner ce rôle qu'aux membres de votre bureau. Englobe les roles SUIVEUR et ELEVE.
  - ROLE_TRESO : Permet d'éditer les factures, les BV. Englobe le role ELEVE.
  - ROLE_SUIVEUR : Permet d'accéder aux études et aux membres de l'association. Englobe le role ELEVE.

@@ -5,7 +5,9 @@ Le Règlement général sur la protection des données, RGPD en français, *auss
 En tant que logiciel de gestion de données personnelles, Jeyser doit également respecter cette réglementation. 
 Nous avons reçu récemment (12/2017) les directives de la CNJE concernant la GDPR et sommes au courant du besoin d'être en conformité à la date du 01/03/2018.
 
-**Nous nous engageons à produire d'ici le 18/02 une mise à jour permettant la mise en place des process relatifs à la GDPR.**
+**Depuis le 18/02/2018 et la version 2.5.0, Jeyser permet l'application du RGPD.**
+
+## Exigences
 
 La GDPR requiert: 
 
@@ -24,13 +26,137 @@ Ils sont au nombre de 5 :
 
 3. que la junior dans le cas où une personne ferait valoir l'exercice d'un de ces droits, la junior doit y répondre dans un délai d'un mois et de manière gratuite. De plus, une fois la démarche effectuée, la junior doit le notifier par mail à la personne.
 
-**Attention**
+## Application
+
+La partie de gestion des données personnelles est accessible uniquement aux membres dotés du role `ROLE_RGPD`. Pour respecter les consignes de la CNJE et l'esprit de la GDPR, nous vous conseillons de donner ce rôle à un nombre limité d'utilisateurs, responsables de l'application des exigences.
+
+<br/>
+<img src="images/rgpd-process.png" alt="Exemple process d'export des données" />
+<br/>
+
+### Données personnelles
+
+Jeyser stocke les données personnelles suivantes (sous réserve qu'elles aient été saisies):
+
+**Membre** Un membre est un étudiant inscrit à la Junior-Entreprise.
+
+ * Nom, Prenom, sexe
+ * Coordonnées: Adresse, numéro de téléphone fixe et mobile
+ * Date de convention Eleve
+ * Email personnel et étudiant
+ * Format de paiement de cotisation
+ * Identifiant dans Jeyser
+ * Lieu et date de naissance, Nationalité
+ * Filière dans l'école
+ * Numéro de sécurité sociale
+ * Missions effectuées avec la junior-entreprise et leur détails: Rémunération, date de début et de fin
+ * Compétences reconnues
+ * Mandats effectués au sien de la junior
+ 
+**Utilisateur** Un utilisateur est un utilisateur inscrit sur Jeyser et pouvant s'y connecter.
+
+ * Nom d'utilisateur
+ * Email
+ * Date de dernière connexion
+ * Date de dernière demande de mot de passe
+ * Roles de l'utilisateur
+ 
+**Employé** Un employé est une personne travaillant pour un prospect.
+
+ * Nom, Prenom, sexe
+ * Coordonnées: Adresse, numéro de téléphone fixe et mobile
+ * Employeur
+ * Poste
+
+### Suppression des données
+
+Les données personnelles sont supprimées dans la mesure du possible. Lorsqu'une personne (membre ou employé) a interagit avec la junior-entreprise, en signant des documents (RM, CC, AP ...), il n'est pas possible de supprimer ces données pour en garantir et respecter les contraintes légales.
+
+Toutes les données personnelles non liées à la junior (email, coordonées, compétences ...) sont supprimées. 
+Le nom et le prénom sont anonymisés en "M. a Nonyme", et les données liées à la junior (documents signés et dates de signatures) sont conservées.
+
+
+### Export des données
+
+Les données personnelles décrites ci-dessus peuvent être exportées en JSON.
+
+Exemple pour un membre:
+
+```json
+{
+   "prenom":"Paul",
+   "nom":"Isaac",
+   "sexe":"Monsieur",
+   "mobile":"06 12 34 56 78",
+   "fix":null,
+   "email":"email@gmail.com",
+   "emailEstValide":true,
+   "estAbonneNewsletter":true,
+   "employe":null,
+   "membre":{
+      "dateConventionEleve":{
+         "date":"2018-11-18 00:00:00.000000",
+         "timezone_type":3,
+         "timezone":"UTC"
+      },
+      "identifiant":"PI1",
+      "emailEMSE":"paul.isaac@etu.enseeiht.fr",
+      "promotion":2018,
+      "dateDeNaissance":{
+         "date":"1997-07-05 00:00:00.000000",
+         "timezone_type":3,
+         "timezone":"UTC"
+      },
+      "lieuDeNaissance":null,
+      "nationalite":"FR",
+      "photoURI":null,
+      "formatPaiement":"aucun",
+      "securiteSociale":null,
+      "filiere":"Info",
+      "competences":[
+         "PHP",
+         "Symfony",
+         "Ruby",
+         "Auth. avanc\u00e9e"
+      ],
+      "mandats":[
+
+      ],
+      "mission":[
+         {
+            "doctype":{
+               "version":1,
+               "signataire1":"M. BEZOS Jeff",
+               "signataire2":null,
+               "dateSignature":"2017-12-14T00:00:00+0000"
+            },
+            "etude":"220THU",
+            "debutOm":"2017-12-14T00:00:00+0000",
+            "finOm":"2018-01-25T00:00:00+0000",
+            "pourcentageJunior":0.4,
+            "avancement":98,
+            "nbrJEH":16,
+            "remunerationBrute":3072
+         }
+      ]
+   },
+   "user":null,
+   "adresse":{
+      "adresse":"7 Avenue de Vincennes, Appartemnt 12",
+      "codepostal":31000,
+      "ville":"Toulouse",
+      "pays":null
+   }
+}
+```
+
+## Avertissement
 
  * Si vous stockez des fichiers dans Jeyser, nous ne les analysons pas. Vous devrez donc les supprimer manuellement. 
  * De même si vous utilisez un espace de stockage en ligne (tel un cloud), la démarche et le process pour cet outil seront sous votre responsabilité.
- * Enfin, comme le rappelle la [licence de Jeyser](https://github.com/n7consulting/Incipio/blob/master/LICENSE), Jeyser est fourni sans gatantie, et ne pourra pas être tenu responsable en cas de non-respect de la législation
+ * Enfin, comme le rappelle la [licence de Jeyser](https://github.com/n7consulting/Incipio/blob/master/LICENSE), Jeyser est fourni sans garantie, et ne pourra pas être tenu responsable en cas de non-respect de la législation.
  
- > THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+> THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
 > APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
 > HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
 > OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
