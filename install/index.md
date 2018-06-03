@@ -50,7 +50,7 @@ Once a subdomain is pointing on your server ip and you connected to your server,
    git clone https://github.com/n7consulting/Incipio.git
    cd Incipio
    # get the latest release number on https://github.com/n7consulting/Incipio/releases
-   git checkout v2.5.0
+   git checkout v2.6.0
    # run the docker installer
    chmod u+x var/install/initial-setup_ubuntu16.sh
    ./var/install/initial-setup_ubuntu16.sh
