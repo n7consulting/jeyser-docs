@@ -35,7 +35,7 @@ If you are just a beginner, we strongly advocates for OVH which provides an easi
 
 As for localization, the closer, the better, thus choose somewhere in France (or Germany if France is not available).
 
-As for Operating System, choose Ubuntu 16.04 because it is the only OS on which our installation process is regularly tested.
+As for Operating System, choose Ubuntu 18.04 because it is the only OS against which our installation process is regularly tested.
 
 During the server booking process you will have to create an account (if you don't already have one) and give some bank account information.
 
