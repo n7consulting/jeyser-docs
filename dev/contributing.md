@@ -1,11 +1,4 @@
----
-title: Contributing
-tags: [en, dev]
-slug_title: contributing
-keywords: fr, contributing
-sidebar: main_sidebar
-permalink: dev/contributing.html
----
+# Contributing
 
 Jeyser is an Open-source software, and we are open to contributions. However, here are some minimal rules.
 
