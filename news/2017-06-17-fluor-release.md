@@ -1,17 +1,11 @@
----
-title:  "Jeyser Fluor released"
-published: true
-permalink: fluor-release.html
-summary: "Ninth release of Jeyser CRM"
-tags: [news]
----
+# Jeyser Fluor released
 
 ## Migration
 
-That new version has no big database changes. You just have to add a new parameter on configuration dashboard : 
+That new version has no big database changes. You just have to add a new parameter on configuration dashboard :
 
 ```
-# go to your installation folder 
+# go to your installation folder
 cd /var/www/Incipio
 git pull  # if that step fails, reach us out on the gitter chat
 git checkout v2.1.0
@@ -26,7 +20,7 @@ docker-compose exec web php bin/console doctrine:migrations:execute 201706142326
 We also advise you to replace the old docker-compose config file by a new one. To do so, execute :
 
 ```
-# go to your installation folder 
+# go to your installation folder
 cd /var/www/Incipio
 docker-compose stop
 # Create a copy of the current configuration (just in case)
@@ -46,18 +40,17 @@ sed -i "s/REPLACE_WITH_YOUR_EMAIL/$email/g" docker-compose.yml
 docker-compose up -d
 ```
 
-
 ## Changelog
 
- * Fix bug on composer installation
- * Bump to PHP 7.1 as minimal supported version
- * Add a restart always option for production container (will help many junior-entreprises)
- * Largely improve UI and fix bug on Mission management
- * Improve UI on doctype selection 
- * Add validators on several entities
- * Improve BA (Bulletin d'Adhésion) doctype
- * Make CI works
- * Remove unused methods, functions and fix typo
-mmy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+- Fix bug on composer installation
+- Bump to PHP 7.1 as minimal supported version
+- Add a restart always option for production container (will help many junior-entreprises)
+- Largely improve UI and fix bug on Mission management
+- Improve UI on doctype selection
+- Add validators on several entities
+- Improve BA (Bulletin d'Adhésion) doctype
+- Make CI works
+- Remove unused methods, functions and fix typo
+  mmy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
 
 {% include links.html %}
