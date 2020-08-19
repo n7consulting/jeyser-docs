@@ -22,8 +22,8 @@ Connect to your server and run the **Jeyser installation script**
    # get the latest release number on https://github.com/n7consulting/Incipio/releases
    git checkout v3.0.0
    # run the docker installer
-   chmod u+x var/install/initial-setup_ubuntu16.sh
-   ./var/install/initial-setup_ubuntu16.sh
+   chmod u+x install/initial-setup_ubuntu16.sh
+   ./install/initial-setup_ubuntu16.sh
 ```
 
 For more details, read below.
