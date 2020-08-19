@@ -20,7 +20,7 @@ Connect to your server and run the **Jeyser installation script**
    git clone https://github.com/n7consulting/Incipio.git
    cd Incipio
    # get the latest release number on https://github.com/n7consulting/Incipio/releases
-   git checkout v3.0.0
+   git checkout v3.0.1
    # run the docker installer
    chmod u+x install/initial-setup_ubuntu16.sh
    ./install/initial-setup_ubuntu16.sh
@@ -36,7 +36,7 @@ To run Jeyser you need a VPS (virtual private server) matching at least the foll
  - 2 GB of RAM
  - 10 Go of hard disk space
  
-We strongly advocates for Ubuntu 18.04 (Ubuntu 16.04 is also supposed to work) as your server Operating System 
+We strongly advocates for Ubuntu 20.04 (Ubuntu 18.04 is also supposed to work, Ubuntu 16.04 is likely to work as well) as your server Operating System 
 because our automatic install scripts are only tested on Ubuntu.
 
 Such server cost between 3 and 7 euros per month.
