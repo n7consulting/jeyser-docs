@@ -1,7 +1,7 @@
 # Docker Architecture
 
 
-**Note :** That page covers the supported Jeyser architecture (ie the Docker one). Jeyser can work without containers, however as the installation is harder and less secure, we won't cover it deeply there.
+**Note :** This page covers the supported Jeyser architecture (ie based on Docker). Jeyser can also run without containers, however because the installation is harder and less secure, we won't cover it here.
 
 ### Docker infrastructure
 
@@ -21,13 +21,15 @@ As detailled in the docker-compose.yml we have :
  
  - mysql: A Mysql 5 database to store your data. It mounts a volume in jeyser's `docker/mysql` folder, thus even if you delete the container, your database will be saved.
  
+
+ - mailer: A postfix server to send any email coming from Docker network.
  
  **Docker basics**
  
-Here are some basics for those who wouldn't be used to Docker.
+Here are some basics for anyone not used to Docker.
 
 Launch Jeyser containers : `docker-compose up -d`
 
 Get access to Jeyser logs : `docker-compose logs` you can add a container name after logs if you want to see logs from a specific container.
 
-If something is misworking, begin with a `docker-compose restart`. You can restart a specific container if you specify its name after restart.
+If something is not working as expected, begin with a `docker-compose restart`. You can restart a specific container if you specify its name after restart.
