@@ -1,0 +1,33 @@
+name: Jeyser site deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+
+      - name: Prepare site & build
+        run: |
+          git clone https://github.com/n7consulting/jeyser-site.git \
+          && cd jeyser-site \
+          && yarn install \
+          && bin/retrieve-documentation \
+          && yarn gatsby build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          repository-name: n7consulting/jeyser-site
+          branch: gh-pages # The branch the action should deploy to.
+          folder: jeyser-site/public # The folder the action should deploy.
+          token: ${{ secrets.GH_PAGES_TOKEN }}
