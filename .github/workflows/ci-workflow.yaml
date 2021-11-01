@@ -1,6 +1,8 @@
-name: Jeyser site CI
+name: Jeyser site CI & deploy
 
 on:
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -23,3 +25,12 @@ jobs:
           && yarn install \
           && bin/retrieve-documentation \
           && yarn gatsby build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        if: success() && github.ref == 'refs/heads/master'
+        with:
+          repository-name: n7consulting/jeyser-site
+          branch: gh-pages # The branch the action should deploy to.
+          folder: jeyser-site/public # The folder the action should deploy.
+          token: ${{ secrets.GH_PAGES_TOKEN }}
