@@ -6,6 +6,7 @@ chapters:
       - id: index
       - id: update
       - id: annexes
+      - id: use-different-email-sender
   - title: Features (french)
     path: features-fr
     items:
@@ -27,7 +28,7 @@ chapters:
       - id: index
       - id: after-install
       - id: add-your-own
-  - title: Development
+  - title: Technical details
     path: dev
     items:
       - id: index
