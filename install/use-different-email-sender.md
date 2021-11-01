@@ -16,7 +16,7 @@ This page describes how to use Mailjet as external email sender. Feel free to pi
 4. The Getting started guide will ask you about the "Send method" to send your emails. Select `SMTP Relay`
 5. Copy the credentials similarly to image below:
 
-<img src="images/mailjet_credentials.png" alt="Mailjet credentials screen" />
+<img src="images/mailjet-credentials.png" alt="Mailjet credentials screen" />
 
 6. SSH to the machine hosting your Jeyser installation and browse to Jeyser folder
 7. Edit `.env` file and replace `MAILER_URL=smtp://mailer:25` by `MAILER_URL=smtp://user:password@in-v3.mailjet.com:587`.
