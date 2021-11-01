@@ -1,7 +1,5 @@
 # Help for SSH connection
 
-# SSH Key connection
-
 Some of the providers don't allow connection with a password. Here is a guide on SSH key. 
 Be warned that it's more difficult than user password authentication. On the other hand, it provides a better security
 (as long as you don't loose the key).
