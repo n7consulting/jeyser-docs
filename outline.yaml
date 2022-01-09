@@ -37,6 +37,7 @@ chapters:
       - id: contributing
       - id: local-development
       - id: docker-architecture
+      - id: backup-and-restore
       - id: demo-data
   - title: News
     path: news
